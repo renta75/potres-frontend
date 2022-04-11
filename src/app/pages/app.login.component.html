@@ -1,0 +1,26 @@
+<div class="login-body">
+    <div class="login-panel ui-fluid login" style="width: 400px;" >
+        <div class="login-panel-content" (keydown)="onKeydown($event)">
+            <div class="ui-g form-group">
+                <img style="max-height: 100px; object-fit: contain; margin: 0px auto 20px auto;" src="assets/layout/images/logo.jpg">
+                <div class="ui-g-12">
+                    <div class="ui-float-label">
+                        <input id="username" type="text" pInputText [(ngModel)]="korisnik">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <span class="ui-float-label">
+                        <input id="password" type="password" [feedback]="false" pPassword [(ngModel)]="zaporka">
+                        <label for="password">Password</label>
+                    </span>
+                </div>
+                <div class="ui-g-12" style="align-content:center">
+                    <button pButton type="button" label="Log In" style="width: 100%" (click)="loginClick()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,123 @@
+<div class="ui-g ui-fluid clear-ui">
+
+  <div class="ui-g-12" *ngIf="!this.loadedFromAnotherComponent">
+    <h1 class="card__title--h1 color--white" *ngIf="this.object">Kategorija pomoći </h1>
+  </div>
+
+  <div class="ui-g-12">
+    <div [class]="!this.loadedFromAnotherComponent ? 'card' : ''">
+      <p-progressSpinner *ngIf="this.loaded===false"></p-progressSpinner>
+      <h1 *ngIf="this.object" style="margin-top:0;"></h1>
+      
+      
+      
+      
+
+      
+
+      
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <input autocomplete="off" type="text" pInputText="" [(ngModel)]="object.name">
+            <label>Naziv</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      </div>
+      
+     </div>
+     
+
+     
+    
+	<div *ngIf="this.loaded===true && !this.loadedFromAnotherComponent" class="ui-g" style="margin-top: 10px;" >
+                <h2 class="card-title">Svojstva</h2>
+
+                <div class="ui-g-12" style="margin-bottom: 10px;">
+                        <p-table [value]="this.properties" selectionMode="single" dataKey="id"
+                            [(selection)]="property" [contextMenu]="cm" [scrollable]="true" contextMenuSelectionMode="joint"
+                            [(contextMenuSelection)]="property">
+                        <ng-template pTemplate="caption">
+                            <div class="ui-helper-clearfix">
+                                <div class="ui-g">
+                                    <button type="button" icon="ui-icon-add" label="New" pButton
+                                        (click)="addProperty()"></button>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                    Naziv
+                                </th>
+                                <th>
+                                  Tip
+                              </th>
+                                <th style="text-align: center;">
+                                    Ažuriraj
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-rowData>
+                            <tr [pSelectableRow]="rowData" [pContextMenuRow]="rowData">
+                                 <td>
+                                  
+                                  {{rowData["id"]}}
+                                  
+                                    
+
+                                </td>
+                                <td>
+                                   
+                                  {{rowData["name"]}}
+                                  
+
+                                </td>
+                                <td>
+                                   
+                                  {{rowData["propertyTypeName"]}}
+                                  
+
+                                </td>
+                                <td style="text-align: center;">
+                                    <button class="ui-button-information ui-button__center" type="button"
+                                        pButton (click)="viewProperty(rowData)" icon="ui-icon-edit"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                    <p-contextMenu #cm [model]="itemsProperty" appendTo="body"></p-contextMenu>
+                </div>
+            </div>
+
+            <p-dialog header="Edit" [(visible)]="displayProperty" *ngIf="displayProperty"
+                [style]="{width: '90%', align: 'center' }" appendTo="body">
+                <property-edit-component [loadedFromAnotherComponent]="true"  (emitNewId)="this.onPropertyNewId()" [inputId]="this.getPropertyId()" [parentId]="this.object.id"  (cancel)="this.cancelPropertyClick($event)" ></property-edit-component>
+            </p-dialog>
+    
+    
+
+     
+
+
+      <div *ngIf="this.loaded===true" class="ui-g">
+        <button type="button" label="Pohrani" pButton="" icon="ui-icon-save" (click)="saveClick($event)"></button>
+        <button type="button" label="Odustani" pButton="" icon="ui-icon-cancel" (click)="cancelClick($event)"></button>
+        <button type="button" *ngIf="this.hideDeleteButton" label="Obriši" pButton="" icon="ui-icon-cancel"(click)="deleteClick($event)"></button>
+      </div>
+    </div>
+  </div>
+</div>

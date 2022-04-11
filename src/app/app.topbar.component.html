@@ -1,0 +1,47 @@
+<div class="layout-topbar">
+
+    <a href="#" class="layout-menubutton" [ngClass]="{'layout-menubutton-active': app.menuActive}" (click)="app.onMenuButtonClick($event)">
+        <div class="layout-menubutton-icon"></div>
+    </a>
+
+    <div class="layout-topbar-grid">
+        <div class="layout-topbar-grid-column layout-topbar-grid-column-fixed">
+            <a href="#" class="layout-logo">
+
+            </a>
+        </div>
+
+        <div class="layout-topbar-grid-column-fixed">
+            <app-menu [reset]="app.resetMenu"></app-menu>
+        </div>
+
+        <div class="layout-topbar-grid-column">
+            <app-breadcrumb></app-breadcrumb>
+        </div>
+
+        <div class="layout-topbar-grid-column layout-topbar-grid-column-fixed" style="padding-left: 20px;">
+           <span style='color: #fff;'> <label [textContent]="getName()"></label> </span>
+        </div>
+
+        <div class="layout-topbar-grid-column layout-topbar-grid-column-fixed">
+            <a href="#" class="profile-menu-button" (click)="app.onTopbarUserMenuButtonClick($event)">
+                <img [src]="getLinkPicture()" >
+            </a>
+            <ul class="layout-profile-menu fadeInDown" style='background: #fb8c00;' [ngClass]="{'layout-profile-menu-active': app.topbarUserMenuActive}" >
+                <li role="menuitem">
+                    <a class="ripplelink" (click)="onProfil()">
+                        <i class="material-icons">account_circle</i>
+                        <span>Profil</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a class="ripplelink" (click)="onLogOut()">
+                        <i class="material-icons">cancel</i>
+                        <span>Odjava</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

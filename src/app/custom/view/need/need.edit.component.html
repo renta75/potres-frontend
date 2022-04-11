@@ -1,0 +1,267 @@
+<div class="ui-g ui-fluid clear-ui" *ngIf="this.loaded===true">
+
+  <div class="ui-g-12" *ngIf="!this.loadedFromAnotherComponent">
+    <h1 class="card__title--h1 color--white" *ngIf="this.object">Potreba </h1>
+  </div>
+
+  <div class="ui-g-12">
+    <div [class]="!this.loadedFromAnotherComponent ? 'card' : ''">
+      <p-progressSpinner *ngIf="this.loaded===false"></p-progressSpinner>
+      <h1 *ngIf="this.object" style="margin-top:0;"></h1>
+      
+      
+      
+      <div *ngIf="this.loaded===true" class="ui-g form-group">
+        <div class="ui-g-12 ui-md-6">
+          <span class="ui-float-label">
+            <p-dropdown [options]="this.categorys" optionLabel="name" [(ngModel)]="object.category"
+                dataKey="id"></p-dropdown>
+            <label>Kategorija</label>
+          </span>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      <div *ngIf="this.loaded===true" class="ui-g form-group">
+        <div class="ui-g-12 ui-md-6">
+          <span class="ui-float-label">
+            <p-dropdown [options]="this.statuss" optionLabel="name" [(ngModel)]="object.status"
+                dataKey="id"></p-dropdown>
+            <label>Status</label>
+          </span>
+        </div>
+      </div>
+      
+      
+
+      
+
+      
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <input autocomplete="off" type="text" pInputText="" [(ngModel)]="object.title">
+            <label>Naslov</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <textarea autocomplete="off" type="text" pInputText="" [(ngModel)]="object.description" rows="3"></textarea>
+            <label>Opis</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <input autocomplete="off" type="text" pInputText="" [(ngModel)]="object.contact">
+            <label>Kontakt</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <input autocomplete="off" type="number" pInputText="" [(ngModel)]="object.locationLat">
+            <label>Lokacija(Lat)</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <input autocomplete="off" type="number" pInputText="" [(ngModel)]="object.locationLng">
+            <label>Lokacija(Lng)</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+            <p-calendar appendTo="body" [(ngModel)]="this.object.createdDateTime" dateFormat="dd.mm.yy."
+            [showTime]="true"></p-calendar>
+            <label>Datum i vrijeme kreiranja</label>
+            </span>
+        
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+            <p-calendar appendTo="body" [(ngModel)]="this.object.editedDateTime" dateFormat="dd.mm.yy."
+            [showTime]="true"></p-calendar>
+            <label>Datum i vrijeme posta</label>
+            </span>
+        
+        
+      </div>
+      
+     </div>
+     
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <textarea autocomplete="off" type="text" pInputText="" [(ngModel)]="object.bulk" rows="3"></textarea>
+            <label>Bulk</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+
+     
+    
+    
+    
+    
+	<div *ngIf="this.loaded===true && !this.loadedFromAnotherComponent" class="ui-g" style="margin-top: 10px;" >
+                <h2 class="card-title">Polja</h2>
+
+                <div class="ui-g-12" style="margin-bottom: 10px;">
+                        <p-table [value]="this.fields" selectionMode="single" dataKey="id"
+                            [(selection)]="needFields" [contextMenu]="cm" [scrollable]="true" contextMenuSelectionMode="joint"
+                            [(contextMenuSelection)]="needFields">
+                        <ng-template pTemplate="caption">
+                            <div class="ui-helper-clearfix">
+                                <div class="ui-g">
+                                    <button type="button" icon="ui-icon-add" label="New" pButton
+                                        (click)="addNeedFields()"></button>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                  Name
+                              </th>
+                                <th>
+                                    Vrijednost
+                                </th>
+                                <th style="text-align: center;">
+                                    Ažuriraj
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-rowData>
+                            <tr [pSelectableRow]="rowData" [pContextMenuRow]="rowData">
+                                 <td>
+                                  
+                                  {{rowData["id"]}}
+                                  
+                                    
+
+                                </td>
+                                <td>
+                                   
+                                  {{rowData["propertyName"]}}
+                                  
+
+                                </td>
+                                <td>
+                                   
+                                  {{rowData["value"]}}
+                                  
+
+                                </td>
+                                <td style="text-align: center;">
+                                    <button class="ui-button-information ui-button__center" type="button"
+                                        pButton (click)="viewNeedFields(rowData)" icon="ui-icon-edit"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                    <p-contextMenu #cm [model]="itemsNeedFields" appendTo="body"></p-contextMenu>
+                </div>
+            </div>
+
+            <p-dialog header="Edit" [(visible)]="displayNeedFields" *ngIf="displayNeedFields"
+                [style]="{width: '90%', align: 'center' }" appendTo="body">
+                <needFields-edit-component [loadedFromAnotherComponent]="true"  (emitNewId)="this.onNeedFieldsNewId()" [inputId]="this.getNeedFieldsId()" [categoryHelpId]="object.category.id" [parentId]="this.object.id"  (cancel)="this.cancelNeedFieldsClick($event)" ></needFields-edit-component>
+            </p-dialog>
+    
+    
+    
+    
+    
+
+     
+
+
+      <div *ngIf="this.loaded===true" class="ui-g">
+        <button type="button" label="Pohrani" pButton="" icon="ui-icon-save" (click)="saveClick($event)"></button>
+        <button type="button" label="Odustani" pButton="" icon="ui-icon-cancel" (click)="cancelClick($event)"></button>
+        <button type="button" *ngIf="this.hideDeleteButton" label="Obriši" pButton="" icon="ui-icon-cancel"(click)="deleteClick($event)"></button>
+      </div>
+    </div>
+  </div>
+</div>

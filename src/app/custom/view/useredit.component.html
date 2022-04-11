@@ -1,0 +1,52 @@
+<div class="ui-g ui-fluid clear-ui">
+    <div class="ui-g-12">
+        <h1 class="card__title--h1 color--white">Korisnik</h1>
+    </div>
+    <div class="ui-g-12">
+        <div class="card">
+            <div class="ui-g form-group">
+                <div class="ui-g-12 ui-md-6">
+                    <span class="md-inputfield">
+                        <input autocomplete="off" type="text" pInputText [(ngModel)]="object.username">
+                        <label>Korisničko ime</label>
+                    </span>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <span class="md-inputfield">
+                        <input autocomplete="off" type="password" [feedback]="false" pPassword
+                            [(ngModel)]="object.password">
+                        <label>Zaporka</label>
+                    </span>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <span class="md-inputfield">
+                        <input autocomplete="off" type="text" pInputText [(ngModel)]="object.firstName">
+                        <label>Ime</label>
+                    </span>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <span class="md-inputfield">
+                        <input autocomplete="off" type="text" pInputText [(ngModel)]="object.lastName">
+                        <label>Prezime</label>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-g form-group">
+                <div class="ui-g-12">
+                    <span class="ui-float-label">
+                        <p-dropdown [options]="this.uloge" (onChange)="changeRole($event)" [(ngModel)]="object.Uloga">
+                        </p-dropdown>
+                        <label>Uloga</label>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-g-12" style="padding-bottom: 30px; padding-top:30px">
+                <button type="button" label="Pohrani" pButton icon="ui-icon-save" (click)="saveClick($event)"></button>
+                <button type="button" label="Pohrani i zatvori" pButton icon="ui-icon-save"
+                    (click)="saveCloseClick($event)"></button>
+                <button type="button" label="Odustani" pButton icon="ui-icon-cancel"
+                    (click)="cancelClick($event)"></button>
+            </div>
+        </div>
+    </div>
+</div>

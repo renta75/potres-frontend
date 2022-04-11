@@ -1,0 +1,419 @@
+// ui-sm-*	Small devices like phones	max-width: 40em (640px)	ui-sm-6, ui-sm-4
+// ui-md-*	Medium sized devices such as tablets	min-width: 40.063em (641px)	ui-md-2, ui-sm-8
+// ui-lg-*	Devices with large screen like desktops	min-width: 64.063em (1025px)	ui-lg-6, ui-sm-12
+// ui-xl-*	Big screen monitors	min-width: 90.063em (1441px)	ui-xl-2, ui-sm-10
+/*   @media only screen and (max-width: 640px) {
+    body {
+      background-color: lightblue; // sm
+    }
+  }
+  @media only screen and (min-width: 641px) {
+    body {
+      background-color: red; // md
+    }
+  }
+  @media only screen and (min-width: 1025px) {
+    body {
+      background-color: green; // lg
+    }
+  }
+  @media only screen and (min-width: 1441px) {
+    body {
+      background-color: gold; // xl
+    }
+  }
+  */
+
+// do tuda zakomentirati
+
+body.blocked-scroll, body.blocked-scroll-config {
+    overflow: auto;
+  }
+
+.color--white {
+    color: white;
+}
+.color--green {
+    color: #8BC34A;
+}
+.color--black {
+  color: #000000;
+}
+.color--red {
+  color:firebrick;
+}
+.card {
+    box-shadow: none;
+    border: 1px solid #8BC34A;
+}
+.card__title--h1 {
+    font-size: 1.4rem;
+}
+.card__title--h2 {
+  font-size: 1.2rem;
+}
+.card__header {
+    margin: .5rem;
+ }
+.card__btn {
+    cursor: pointer;
+}
+
+.row {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+  }
+.col {
+    display: inline-block;
+    width: 20%;
+  }
+@media only screen and (max-width: 1650px) {
+  .col {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .col {
+    width: 33.33333333333333%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .col {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .col {
+    width: 100%;
+  }
+}
+.card__item .ui-card {
+  margin: .5rem;
+}
+.pfooter {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.el_height {
+  height: 60px;
+}
+.card__inp-plus-btn {
+  // kontejner
+}
+
+.ui-fileupload-buttonbar.ui-widget-header {
+  background-color: transparent;
+  border: 0 none;
+}
+
+.ui-fileupload-content {
+  display: none;
+}
+.ui-tabview .ui-tabview-nav > li.ui-state-active {
+  border-color: #1E88E5 !important;
+}
+.ui-button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin: 10% 0;
+  align-items: center;
+}
+.ui-button__center {
+  margin: auto;
+}
+.btn {
+  width: auto;
+}
+
+.ui-chips {
+  display: inline-block
+}
+
+/* .ui-chips ul {
+
+} */
+
+/*  .ui-chips > ul.ui-inputtext .ui-chips-token {
+} */
+ p-chips .ui-chips-token span.ui-chips-token-icon.pi {
+   display: inline-block !important;
+   position: absolute !important;
+   right: 0;
+ }
+ p-chips .ui-chips-token .ng-star-inserted span {
+   padding-right: 2rem;
+ }
+
+ /* p-chips širina */
+ .ui-chips.ui-widget {
+   width: 100%;
+ }
+
+
+ /* search field za tablice */
+
+ .table-search-field-icon {
+    margin: 4px 4px 0 10px;
+    float:right;
+ }
+
+ .table-search-field-input {
+    width:auto;
+    float:right;
+    color: white;
+    margin-top: 4px;
+ }
+
+ .table-search-field-input::placeholder {
+   color: white;
+ }
+
+ /* OSTALO */
+
+ body .md-inputfield {
+   margin-top: 10px;
+ }
+
+ .layout-topbar-perfection .layout-breadcrumb li a {
+  color: #fff;
+  font-weight: 600;
+ }
+
+ .layout-menu-connectionstwo .layout-menu-container, .layout-menu-connectionstwo .layout-profile-menu {
+   background-image: none;
+   background-color: #178b00;
+ }
+
+ .table-search-field-input {
+   width: auto !important;
+   max-width: 200px !important;
+ }
+
+ app-config {
+   display: none;
+ }
+
+ .layout-footer {
+   background-color: unset;
+   color: #9f9f9f;
+ }
+
+ /* clarify UI */
+
+.clear-ui {
+
+  h4 {
+    margin-top: 0.8em;
+    margin-bottom: 0.6em;
+  }
+
+  div.ui-g-12 {
+    padding-bottom: 0.6em;
+  }
+
+  .p-grid {
+    flex: 0 0 100%;
+  }
+
+  .ui-card.ui-widget-content {
+    padding: 0px !important;
+  }
+
+  .ui-card .ui-card-title {
+    font-size: 1.2em !important;
+  }
+
+  .ui-card {
+    height: 100% !important;
+  }
+
+  .card {
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    height: 100%;
+    padding-bottom: 0px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .card {
+    .ui-g-1, .ui-g-2, .ui-g-3, .ui-g-4, .ui-g-5, .ui-g-6, .ui-g-7, .ui-g-8, .ui-g-9, .ui-g-10, .ui-g-11, .ui-g-12 {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+
+    .ui-fileupload .ui-fileupload-buttonbar {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+  }
+
+  .form-group {
+    .ui-g-1, .ui-g-2, .ui-g-3, .ui-g-4, .ui-g-5, .ui-g-6, .ui-g-7, .ui-g-8, .ui-g-9, .ui-g-10, .ui-g-11, .ui-g-12 {
+      padding-left: 0px !important;
+      padding-right: 15px !important;
+    }
+  }
+
+  .card-title {
+    margin: 0;
+  }
+
+  .card-table {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+  .ui-button {
+    width: unset;
+  }
+
+  .ui-chips > ul.ui-inputtext {
+    min-height: 30px;
+  }
+
+  .ui-autocomplete-token {
+    min-height: 22px;
+  }
+
+  div > button:not(:last-child) {
+    margin-right: 0.5em;
+  }
+
+  div > p-checkbox:not(:last-child) {
+    margin-right: 1em;
+  }
+
+  th, td {
+    padding: 0.4em 0.5em !important;
+  }
+
+  td > button:not(:last-child) {
+    margin-right: 0.4em;
+  }
+
+  h1.card__title--h1 {
+    margin: -20px auto 10px auto;
+  }
+
+  .ui-table-scrollable-wrapper table {
+    min-width: 600px;
+  }
+}
+
+.login-body .login-panel .login-panel-content {
+  padding: 50px;
+  position: initial;
+}
+
+.login-body .login-panel {
+  height: auto;
+}
+
+.ui-float-label label {
+ top: -.75em;
+ font-size: 12px;
+}
+
+.form-group > div {
+  margin-bottom: 5px !important;
+}
+
+.clear-ui .card {
+  padding: 25px 20px;
+}
+
+.ui-switch {
+  margin-bottom: 10px;
+}
+
+.ui-switch label {
+ position: relative;
+ top: -0.2em;
+ left: 0.8em;
+}
+
+@media screen and (max-width: 39.938em) {
+  .clear-ui {
+    div > button {
+      display: block;
+      margin-top: 0.5em;
+    }
+
+    .card-title {
+      margin: 1em 0 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .layout-breadcrumb {
+    display: none;
+  }
+
+  .table-search-field-input {
+    width: 90% !important;
+    max-width: 90% !important;
+    margin: 20px 0px 10px 0px
+  }
+
+  .table-search-field-icon {
+    margin: 20px 0px 10px 0px
+  }
+
+  .layout-footer {
+    padding: 0px 20px;
+  }
+}
+
+//STYLING TABLE FROM SERVER
+table.tableFromServer {
+  background-color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.tableFromServer td, table.tableFromServer th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.tableFromServer tbody td {
+  font-size: 13px;
+}
+table.tableFromServer thead {
+  background: #000000;
+  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);
+  border-bottom: 2px solid #444444;
+}
+table.tableFromServer thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+}
+table.tableFromServer tfoot td {
+  font-size: 14px;
+}
+table.tableFromServer tfoot .links {
+  text-align: right;
+}
+table.tableFromServer tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

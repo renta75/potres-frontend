@@ -1,0 +1,56 @@
+<div class="ui-g ui-fluid clear-ui">
+    <div class="ui-g-12">
+        <h1 class="card__title--h1 color--white">Kategorije pomoći</h1>
+    </div>
+    <div class="ui-g-12">
+        <div class="card card-table">
+            <p-progressSpinner *ngIf="this.loaded===false"></p-progressSpinner>
+            <p-table *ngIf="this.loaded===true" #dt [columns]="cols" [value]="this.objects" selectionMode="single" dataKey="id"
+                [paginator]="true" [rows]="15"
+                [(selection)]="selected" [scrollable]="true"
+                [contextMenu]="cm" contextMenuSelectionMode="joint" 
+                [(contextMenuSelection)]="selected">
+                <ng-template pTemplate="caption">
+                    <div class="ui-helper-clearfix">
+                        <button type="button" icon="ui-icon-add" label="Novi" pButton (click)="addClick($event)"
+                            style="float:left"></button>
+                        <!-- <button type="button" pButton icon="ui-icon-cloud-download"
+                            iconPos="left" label="Svi podaci" (click)="exportExcel(dt)" style="float:left"></button> -->
+                        <input class="table-search-field-input" type="text" pInputText size="50" placeholder="Traži..."
+                            (input)="dt.filterGlobal($event.target.value, 'contains')">
+                        <i class="pi pi-search table-search-field-icon"></i>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns">
+                          
+                          {{col.header}}
+                          
+
+                          <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                        <th style="text-align: center;">
+                            Radnje
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData" [pContextMenuRow]="rowData">
+                        <td *ngFor="let col of columns">
+                          
+                          {{rowData[col.field]}}
+                          
+                        </td>
+                        <td style="text-align: center;">
+                            <button class="ui-button-information ui-button__center" type="button" pButton
+                                (click)="view(rowData)" pTooltip="Uredi" tooltipPosition="top" icon="ui-icon-edit"
+                                style="margin-right: 0.5em;"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <p-contextMenu #cm [model]="items"></p-contextMenu>
+        </div>
+    </div>
+</div>

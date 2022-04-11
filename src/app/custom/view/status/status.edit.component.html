@@ -1,0 +1,44 @@
+<div class="ui-g ui-fluid clear-ui">
+
+  <div class="ui-g-12" *ngIf="!this.loadedFromAnotherComponent">
+    <h1 class="card__title--h1 color--white" *ngIf="this.object">Status </h1>
+  </div>
+
+  <div class="ui-g-12">
+    <div [class]="!this.loadedFromAnotherComponent ? 'card' : ''">
+      <p-progressSpinner *ngIf="this.loaded===false"></p-progressSpinner>
+      <h1 *ngIf="this.object" style="margin-top:0;"></h1>
+      
+      
+
+      
+
+      
+      <div *ngIf="this.loaded===true " class="ui-g form-group">
+      <div class="ui-g-12 ui-md-6">
+      
+      
+        <span class="ui-float-label">
+          <input autocomplete="off" type="text" pInputText="" [(ngModel)]="object.name">
+            <label>name</label>
+          </span>
+       
+        
+      </div>
+      
+     </div>
+     
+
+     
+
+     
+
+
+      <div *ngIf="this.loaded===true" class="ui-g">
+        <button type="button" label="Pohrani" pButton="" icon="ui-icon-save" (click)="saveClick($event)"></button>
+        <button type="button" label="Odustani" pButton="" icon="ui-icon-cancel" (click)="cancelClick($event)"></button>
+        <button type="button" *ngIf="this.hideDeleteButton" label="Obriši" pButton="" icon="ui-icon-cancel"(click)="deleteClick($event)"></button>
+      </div>
+    </div>
+  </div>
+</div>
